@@ -2,9 +2,7 @@
 
 <h3>You can take a look at the clean architecture article <a target="_blank" href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">here</a>.</h3>
 
-<!-- <img src="https://www.maximecolin.fr/uploads/2015/11/56570243d02c0_hexagonal-architecture.png" alt="hexagonal architecture"/> -->
-
-![hexagonal-architecture](https://www.maximecolin.fr/uploads/2015/11/56570243d02c0_hexagonal-architecture.png)
+![clean-architecture](https://www.milanjovanovic.tech/blogs/mnw_062/clean_architecture.png?imwidth=3840)
 
 ## Installation
 
