@@ -7,6 +7,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { CacheService } from './cache';
 import { ormConfig } from './database/ormconfig';
 import dotenvConfig from './environments/index';
+import { RabbitmqModule } from './rabbitmq/rabbitmq.module';
+import { MessageController } from 'presentation/controllers/message.controller';
+import { HelloConsumer } from './rabbitmq/consumers/hello.consumer';
 
 @Module({
   imports: [
@@ -19,8 +22,9 @@ import dotenvConfig from './environments/index';
     CacheModule.registerAsync({
       useClass: CacheService,
     }),
+    RabbitmqModule,
   ],
-  controllers: [],
+  controllers: [MessageController, HelloConsumer],
   providers: [
     {
       provide: APP_INTERCEPTOR,
