@@ -35,7 +35,7 @@ async function bootstrap() {
       rateLimit({
         windowMs: 1000 * 60 * 60,
         max: 1000, // 1000 requests per windowMs
-        message: '⚠️ Too many request created from this IP, plaease try again after an hour',
+        message: '⚠️ Too many request created from this IP, please try again after an hour',
       }),
     );
 
@@ -63,9 +63,13 @@ async function bootstrap() {
     const PORT = configService.get('port', '3000');
 
     await app.listen(PORT);
-    process.env.NODE_ENV !== 'production'
-      ? Logger.log(`🚀 Server ready at http://${HOST}:${chalk.hex('#87e8de').bold(`${PORT}`)}`)
-      : Logger.log(`🚀 Server is listening on port ${chalk.hex('#87e8de').bold(`${PORT}`)}`);
+    Logger.log(
+      `🚀 Server ${
+        process.env.NODE_ENV !== 'production'
+          ? `ready at http://${HOST}:${chalk.hex('#87e8de').bold(`${PORT}`)}`
+          : `is listening on port ${chalk.hex('#87e7de').bold(`${PORT}`)}`
+      }`,
+    );
 
     if (module.hot) {
       module.hot.accept();

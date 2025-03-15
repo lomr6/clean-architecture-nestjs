@@ -7,7 +7,7 @@ const configService = new ConfigService(dotenvConfig());
 
 export const ormConfig: DataSourceOptions = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  type: configService.get('database.connection') as any,
+  type: (configService.get('database.connection') as any) || 'postgres',
   host: configService.get('database.host'),
   port: configService.get('database.port'),
   username: configService.get('database.username'),
